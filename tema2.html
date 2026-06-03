@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 2 - Scratch</title>
+
+<style>
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#FFF8F0;
+    margin:0;
+    padding:20px;
+}
+
+/* Botón regresar */
+.regresar{
+    width:120px;
+    cursor:pointer;
+}
+
+.avatarGif{
+    position:absolute;
+    top:50px;
+    right:20px;
+    width:250px;
+}
+
+/* Título */
+h1{
+    text-align:center;
+    color:#FF6600;
+    margin-top:-40px;
+}
+
+/* Contenido */
+.contenido{
+    max-width:900px;
+    margin:40px auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* Botón audio */
+.audio{
+    display:block;
+    width:120px;
+    margin:30px auto;
+    cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Botón regresar -->
+<img src="regresar.png"
+     alt="Regresar"
+     class="regresar"
+     onclick="window.location.href='MenuPrincipal.html'">
+
+<video class="avatarGif" autoplay muted loop playsinline>
+    <source src="GIF Avatar.mp4" type="video/mp4">
+	</video>
+
+<h1>¿Cómo funciona Scratch?</h1>
+
+<div class="contenido">
+
+    En Scratch debes unir bloques de colores, como si fueran piezas de lego.
+    <br><br>
+
+    Al unirlos, estás creando una secuencia, que serán los pasos que debes seguir para que funcione.
+    <br><br>
+
+    De esta manera, puedes crear juegos, historias animadas, hacer que los personajes hablen, salten, exactamente cuando tú quieras.
+    <br><br>
+
+    Es una manera divertida de entrenar tu cerebro en la lógica y la resolución de problemas usando la creatividad y la imaginación.
+
+</div>
+
+<!-- Audio -->
+<audio id="audioTema">
+    <source src="audio texto.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Botón escuchar -->
+<img src="ICONO AUD.png"
+     alt="Escuchar"
+     class="audio"
+     onclick="document.getElementById('audioTema').play()">
+
+</body>
+</html>

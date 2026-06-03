@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 3 - Entorno de Scratch</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#FFF8F0;
+    text-align:center;
+}
+
+/* Botón regresar */
+.regresar{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:120px;
+    cursor:pointer;
+}
+
+/* Título */
+h1{
+    margin-top:40px;
+    color:#FF6600;
+}
+
+/* Video */
+.video{
+    display:block;
+    width:800px;
+    max-width:90%;
+    margin:8px auto;
+    border-radius:15px;
+}
+
+/* Botón Scratch */
+.botonScratch{
+    width:250px;
+    cursor:pointer;
+    margin-bottom:30px;
+	top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Regresar -->
+<img src="regresar.png"
+     alt="Regresar"
+     class="regresar"
+     onclick="window.location.href='MenuPrincipal.html'">
+
+<h1>Conociendo el Entorno de Scratch</h1>
+
+<!-- Video -->
+<video class="video" controls>
+    <source src="video entorno.mp4" type="video/mp4">
+</video>
+
+<!-- Botón ir a Scratch -->
+<img src="Boton Ir a Scratch.png"
+     alt="Ir a Scratch"
+     class="botonScratch"
+     onclick="window.open('https://scratch.mit.edu/', '_blank')">
+
+</body>
+</html>

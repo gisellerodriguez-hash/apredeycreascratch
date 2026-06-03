@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 10 - Variables y creación de mini juego</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#FFF8F0;
+    text-align:center;
+}
+
+/* Botón regresar */
+.regresar{
+    position:fixed;
+    top:2%;
+    left:2%;
+    width:8vw;       
+    min-width:50px;  
+    max-width:70px;  
+    cursor:pointer;
+    z-index:100;
+
+}
+
+/* Título */
+h1{
+    margin-top:40px;
+    color:#FF6600;
+}
+
+/* Video */
+.video{
+    display:block;
+    width:800px;
+    max-width:90%;
+    margin:8px auto;
+    border-radius:15px;
+}
+
+/* Botón Scratch */
+.botonScratch{
+    width:250px;
+    cursor:pointer;
+    margin-bottom:30px;
+	top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Regresar -->
+<img src="regresar.png"
+     alt="Regresar"
+     class="regresar"
+     onclick="window.location.href='MenuPrincipal.html'">
+
+<h1>Variables y creación de mini juego</h1>
+
+<!-- Video -->
+<video class="video" controls>
+    <source src="video 4.mp4" type="video/mp4">
+</video>
+
+<!-- Botón ir a Scratch -->
+<img src="Boton Ir a Scratch.png"
+     alt="Ir a Scratch"
+     class="botonScratch"
+     onclick="window.open('https://scratch.mit.edu/', '_blank')">
+
+</body>
+</html>

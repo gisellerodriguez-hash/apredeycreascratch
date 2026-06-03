@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 12 - Evaluación</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f0f0f0;
+    font-family:Arial, sans-serif;
+}
+
+/* BOTÓN REGRESAR */
+.regresar{
+    position:fixed;
+    top:2%;
+    left:2%;
+    width:6vw;
+    min-width:40px;
+    max-width:70px;
+    cursor:pointer;
+    z-index:100;
+}
+
+/* CONTENEDOR */
+.contenedor{
+    position:relative;
+    width:90%;
+    max-width:850px;
+    margin:20px auto;
+}
+
+/* IMAGEN PRINCIPAL */
+.fondo{
+   width:100%; 
+   height:auto; 
+   display:block;
+}
+
+/* BOTONES AUDIO */
+.audio{
+    position:absolute;
+    width:8%;
+    max-width:55px;
+    min-width:30px;
+    cursor:pointer;
+}
+
+/* POSICIONES AUDIOS */
+
+#audio0{
+    top:14%;
+   left:93%;
+}
+
+#audio1{
+    top:25%;
+    right:16%;
+}
+
+#audio2{
+    top:34%;
+    right:0%;
+}
+
+#audio3{
+    top:45%;
+    right:0%;
+}
+
+#audio4{
+    top:56%;
+    right:0%;
+}
+
+#audio5{
+    top:67%;
+    right:0%;
+}
+
+#audio6{
+    top:79%;
+    right:0%;
+}
+
+#audio7{
+    top:90%;
+    right:57%;
+}
+
+/* BOTÓN RESPONDER */
+.responder{
+    position:absolute;
+    top:21%;
+    right:20%;
+    width:16%;
+    min-width:250px;
+    cursor:pointer;
+}
+
+/* CUADRO RESPUESTA */
+.cuadro-respuesta{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    z-index:200;
+    width:80%;
+    max-width:400px;
+}
+
+/* BOTÓN IR A SCRATCH */
+.boton-scratch{
+    display:block;
+    width:22%;
+    min-width:180px;
+    max-width:260px;
+    margin:20px auto 40px auto;
+    cursor:pointer;
+}
+
+.cuadro-respuesta h2{
+    margin-top:0;
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    resize:none;
+    padding:10px;
+    font-size:16px;
+}
+
+.botones{
+    margin-top:15px;
+    display:flex;
+    justify-content:space-between;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.enviar{
+    background:#4CAF50;
+    color:white;
+}
+
+.cerrar{
+    background:#f44336;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BOTÓN REGRESAR -->
+<a href="MenuPrincipal.html">
+    <img src="Regresar.png"
+         class="regresar"
+         alt="Regresar">
+</a>
+
+<div class="contenedor">
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img src="IMAGEN EVALUACION.png"
+         class="fondo"
+         alt="Evaluación">
+
+    <!-- BOTÓN RESPONDER -->
+    <img src="Rta pregunta.png"
+         class="responder"
+         onclick="abrirRespuesta()">
+
+    <!-- AUDIOS -->
+    <img src="ICONO AUD.png"
+         id="audio0"
+         class="audio"
+         onclick="reproducirAudio('a0')">
+
+    <img src="ICONO AUD.png"
+         id="audio1"
+         class="audio"
+         onclick="reproducirAudio('a1')">
+
+    <img src="ICONO AUD.png"
+         id="audio2"
+         class="audio"
+         onclick="reproducirAudio('a2')">
+
+    <img src="ICONO AUD.png"
+         id="audio3"
+         class="audio"
+         onclick="reproducirAudio('a3')">
+
+    <img src="ICONO AUD.png"
+         id="audio4"
+         class="audio"
+         onclick="reproducirAudio('a4')">
+
+    <img src="ICONO AUD.png"
+         id="audio5"
+         class="audio"
+         onclick="reproducirAudio('a5')">
+
+    <img src="ICONO AUD.png"
+         id="audio6"
+         class="audio"
+         onclick="reproducirAudio('a6')">
+   
+     <img src="ICONO AUD.png"
+         id="audio7"
+         class="audio"
+         onclick="reproducirAudio('a7')">
+</div>
+
+<!-- BOTÓN IR A SCRATCH -->
+<a href="https://scratch.mit.edu/" target="_blank">
+    <img src="Boton Ir a Scratch.png"
+         class="boton-scratch"
+         alt="Ir a Scratch">
+</a>
+
+<!-- VENTANA RESPUESTA -->
+<div class="cuadro-respuesta" id="cuadroRespuesta">
+
+</div>
+
+<!-- VENTANA RESPUESTA -->
+<div class="cuadro-respuesta" id="cuadroRespuesta">
+
+    <h2>Escribe tu respuesta</h2>
+
+    <textarea placeholder="Escribe aquí tu respuesta..."></textarea>
+
+    <div class="botones">
+        <button class="cerrar"
+                onclick="cerrarRespuesta()">
+            Cerrar
+        </button>
+
+        <button class="enviar"
+                onclick="enviarRespuesta()">
+            Enviar
+        </button>
+    </div>
+
+</div>
+
+<!-- AUDIOS -->
+
+<audio id="a0">
+    <source src="eva inicio.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="a1">
+    <source src="eva pregunta.mp3" type="audio/mp4">
+</audio>
+
+<audio id="a2">
+    <source src="eva paso 1.m4a" type="audio/mp4">
+</audio>
+
+<audio id="a3">
+    <source src="eva paso 2.m4a" type="audio/mp4">
+</audio>
+
+<audio id="a4">
+    <source src="eva paso 3.m4a" type="audio/mp4">
+</audio>
+
+<audio id="a5">
+    <source src="eva paso 4.m4a" type="audio/mpeg">
+</audio>
+
+<audio id="a6">
+    <source src="eva paso 5.m4a" type="audio/mpeg">
+</audio>
+
+<audio id="a7">
+    <source src="eva final.m4a" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* REPRODUCIR AUDIOS */
+function reproducirAudio(id){
+
+    const audios =
+        document.querySelectorAll("audio");
+
+    audios.forEach(audio=>{
+        audio.pause();
+        audio.currentTime = 0;
+    });
+
+    const audioSeleccionado =
+        document.getElementById(id);
+
+    audioSeleccionado.play()
+    .catch(error=>{
+        console.log(error);
+    });
+}
+
+/* ABRIR CUADRO */
+function abrirRespuesta(){
+    document.getElementById("cuadroRespuesta")
+            .style.display = "block";
+}
+
+/* CERRAR CUADRO */
+function cerrarRespuesta(){
+    document.getElementById("cuadroRespuesta")
+            .style.display = "none";
+}
+
+/* ENVIAR */
+function enviarRespuesta(){
+
+    alert("Respuesta enviada correctamente.");
+
+    cerrarRespuesta();
+}
+
+</script>
+
+</body>
+</html>

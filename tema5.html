@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 5</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#dcdcdc;
+}
+
+/* Botón regresar */
+.regresar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:70px;
+    cursor:pointer;
+    z-index:100;
+}
+
+/* Botón Scratch */
+.botonScratch{
+    width:200px;
+    cursor:pointer;
+    margin-bottom:5px;
+    top: 20px;
+  
+}
+
+/* Contenedor principal */
+.contenedor{
+    position:relative;
+    width:420px;
+    margin:20px auto;
+}
+
+/* Imagen actividad */
+.actividad{
+    width:100%;
+    display:block;
+}
+
+/* Botones audio */
+.audio-btn{
+    position:absolute;
+    width:38px;
+    cursor:pointer;
+}
+
+/* Posiciones relativas */
+.audio1{
+    top:85px;
+    right:2px;
+}
+
+.audio2{
+    top:210px;
+    right:2px;
+}
+
+.audio3{
+    top:300px;
+    right:2px;
+}
+
+.audio4{
+    top:380px;
+    right:2px;
+}
+
+.audio5{
+    top:465px;
+    right:2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Botón regresar -->
+<a href="MenuPrincipal.html">
+    <img src="Regresar.png" class="regresar">
+</a>
+
+<div class="contenedor">
+
+    <!-- Imagen principal -->
+    <img src="IMG ACTIVIDAD.PNG" class="actividad">
+
+    <!-- Botones de audio -->
+    <img src="ICONO AUD.PNG"
+         class="audio-btn audio1"
+         onclick="reproducirAudio('audio1')">
+
+    <img src="ICONO AUD.PNG"
+         class="audio-btn audio2"
+         onclick="reproducirAudio('audio2')">
+
+    <img src="ICONO AUD.PNG"
+         class="audio-btn audio3"
+         onclick="reproducirAudio('audio3')">
+
+    <img src="ICONO AUD.PNG"
+         class="audio-btn audio4"
+         onclick="reproducirAudio('audio4')">
+
+    <img src="ICONO AUD.PNG"
+         class="audio-btn audio5"
+         onclick="reproducirAudio('audio5')">
+
+<!-- Botón ir a Scratch -->
+    <img src="Boton Ir a Scratch.png"
+     alt="Ir a Scratch"
+     class="botonScratch"
+     onclick="window.open('https://scratch.mit.edu/', '_blank')">
+
+
+
+</div>
+
+<!-- Audios -->
+<audio id="audio1">
+    <source src="AUD DESCRIP ACT1.AAC " type="audio/mpeg">
+</audio>
+
+<audio id="audio2">
+    <source src="PASO 1 ACT1.AAC" type="audio/mpeg">
+</audio>
+
+<audio id="audio3">
+    <source src="PASO 2 ACT1.AAC" type="audio/mpeg">
+</audio>
+
+<audio id="audio4">
+    <source src="PASO 3 ACT1.AAC" type="audio/mpeg">
+</audio>
+
+<audio id="audio5">
+    <source src="PASO 4 ACT1.AAC" type="audio/mpeg">
+</audio>
+
+<script>
+function reproducirAudio(id){
+
+    // Selecciona todos los audios
+    const audios = document.querySelectorAll("audio");
+
+    // Detiene todos los audios
+    audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+
+    // Reproduce solo el audio seleccionado
+    const audioSeleccionado = document.getElementById(id);
+    audioSeleccionado.play()
+    .catch(error => {
+        console.log("Error al reproducir:", error);
+    });
+}
+</script>
+
+</body>
+</html>
